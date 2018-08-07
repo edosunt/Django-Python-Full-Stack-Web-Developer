@@ -1,0 +1,15 @@
+#one{
+  border: 4px solid red;
+  width: 25%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+#two{
+  border: 4px solid blue;
+  width: 50%;
+  text-align: center;
+  padding: 100px;
+  margin: auto;
+}

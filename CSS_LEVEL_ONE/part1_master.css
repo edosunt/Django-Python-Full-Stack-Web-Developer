@@ -1,0 +1,19 @@
+/* selected tag{
+  property: value;
+} */
+
+h1 {
+  color: red;
+}
+
+p {
+  color: rgb(66, 235, 244);
+}
+
+ol {
+  color: #cc7110;
+}
+
+h4 {
+  color: rgba(68, 11, 0,0.5);
+}

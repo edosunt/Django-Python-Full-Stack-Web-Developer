@@ -1,0 +1,20 @@
+body{
+  background: url(https://www.margaretriver.com/wp-content/uploads/2018/07/smithsbchb.jpg);
+  background-repeat: no-repeat;
+}
+
+div{
+  background-color: red;
+  border-color: blue;
+  border-width: 3px;
+  border-style: dotted;
+}
+
+p{
+  color: white;
+}
+
+span{
+  background-color: white;
+  color: black;
+}

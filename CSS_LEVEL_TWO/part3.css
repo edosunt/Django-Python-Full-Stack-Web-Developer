@@ -1,0 +1,35 @@
+h1{
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1em;
+  text-align: center;
+}
+
+.art{
+  margin: auto;
+}
+
+td{
+  height: 150px;
+  width: 300px;
+  border: 5px solid white;
+}
+
+#one{
+  background: #05668D;
+}
+
+#two{
+  background: #028090;
+}
+
+#three{
+  background: #00A896;
+}
+
+#four{
+  background: #02C39A;
+}
+
+#five{
+  background: #F0F3BD;
+}

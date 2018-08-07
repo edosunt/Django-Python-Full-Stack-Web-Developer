@@ -1,0 +1,17 @@
+h1{
+  font-family: cursive;
+  text-align: center;
+}
+
+body{
+  font-size: 15px;
+}
+
+p{
+  font-style: italic;
+}
+
+#two{
+  font-size: 1.5em;
+  font-family: 'Poor Story', cursive;
+}
