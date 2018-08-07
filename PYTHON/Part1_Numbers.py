@@ -18,7 +18,7 @@
 #
 # Integers are just whole numbers, positive or negative. For example: 2 and -2 are
 #  examples of integers.
-# 
+#
 # Floating point numbers in Python are notable because they have a decimal point
 # in them, or use an exponential (e) to define the number. For example 2.0 and -2.1
 # are examples of floating point numbers. 4E2 (4 times 10 to the power of 2) is
@@ -122,3 +122,5 @@ my_taxes
 # We then wrapped it up with learning about Variable Assignment in Python.
 #
 # Up next we'll learn about Strings!
+
+print('hello world')
