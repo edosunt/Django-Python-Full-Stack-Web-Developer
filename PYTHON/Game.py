@@ -29,7 +29,7 @@ def check_code(key,guess):
             clue.append("Close")
 
     if clue == []:
-        return "Nope"
+        return ["Nope"]
     else:
         return clue
 
