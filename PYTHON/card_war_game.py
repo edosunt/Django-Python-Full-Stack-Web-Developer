@@ -97,6 +97,16 @@ def compareCard(card1,card2):
     else:
         return "Player 2"
 
+def processCard(winner,number):
+    if winner == 'Player 1':
+        for i in range (0,number):
+            hand1.addCard(hand2.removeCard())
+            hand1.addCard(hand1.removeCard())
+    elif winner == 'Player 2':
+        for i in range (0,number):
+            hand2.addCard(hand1.removeCard())
+            hand2.addCard(hand2.removeCard())
+
 
 ######################
 #### GAME PLAY #######
@@ -135,14 +145,24 @@ while not gameOver:
 
     #take action
     if result == 'Player 1':
-        hand1.addCard(hand2.removeCard())
-        hand1.addCard(hand1.removeCard())
+        processCard('Player 1',1)
     elif result == 'Player 2':
-        hand2.addCard(hand1.removeCard())
-        hand2.addCard(hand2.removeCard())
-    else:
-        hand2.addCard(hand1.removeCard())
-        hand2.addCard(hand2.removeCard())
+        processCard('Player 2',1)
+    else: #if it's DRAW
+        #compare the 5th card or the last card
+        maxPlayer = 4 if hand1.length() > 5 and hand2.length() > 5 else min(hand1.length(),hand2.length())-1
+
+        result = compareCard(hand1.showCard()[maxPlayer],hand2.showCard()[maxPlayer])
+
+        print("Player 1 play card: {}".format(hand1.showCard()[maxPlayer]))
+        print("Player 2 play card: {}".format(hand2.showCard()[maxPlayer]))
+        print('The winner is: %r' % result)
+
+        #process all 5 cards
+        if result == 'Player 1' or result == "DRAW":
+            processCard('Player 1',maxPlayer+1)
+        elif result == 'Player 2':
+            processCard('Player 2',maxPlayer+1)
 
     #check if game over
     gameOver = True if (hand1.length() == 0) or (hand2.length() == 0) else False
