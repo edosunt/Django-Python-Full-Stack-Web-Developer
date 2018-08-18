@@ -83,8 +83,9 @@ class Player:
     This is the Player class, which takes in a name and an instance of a Hand
     class object. The Player can then play cards and check if they still have cards.
     """
-    def __init__(self,playerName):
+    def __init__(self,playerName,hand):
         self.playerName = playerName
+        self.hand = hand
 
     def showName(self):
         return self.playerName
@@ -117,13 +118,9 @@ print("Welcome to War, let's begin...")
 myDeck = Deck()
 myDeck.acak()
 
-#assign the split deck into two different hand
-hand1 = Hand(myDeck.split()[0])
-hand2 = Hand(myDeck.split()[1])
-
 #initiating players
-player1 = Player(input("What is your name player1? "))
-player2 = Player("computer")
+player1 = Player(input("What is your name player1? "),Hand(myDeck.split()[0]))
+player2 = Player("Computer",Hand(myDeck.split()[1]))
 
 #start the game and continue loop until gameOver = True
 gameOver = False
@@ -132,12 +129,12 @@ round = 1
 while not gameOver:
     print('-------------------------------------------')
     print('Round : %d' % round)
-    print('Card on player 1 hand : {}'.format(hand1.showCard()))
-    print('Card on player 2 hand : {}'.format(hand2.showCard()))
+    print('Card on {} hand : {}'.format(player1.playerName, player1.hand)
+    print('Card on {} hand : {}'.format(player2.playerName, player2.hand)
 
     #showing the first card on players hand
-    print("Player 1 play card: {}".format(hand1.showCard()[0]))
-    print("Player 2 play card: {}".format(hand2.showCard()[0]))
+    print("{} play card: {}".format(player1.playerName, player1.hand[0])
+    print("{} play card: {}".format(player2.playerName, player2.hand[0])
 
     #compare the card
     result = compareCard(hand1.showCard()[0],hand2.showCard()[0])
