@@ -1,6 +1,4 @@
-a="abcdef"
-b="abg"
+import os
 
-print(a[0:4])
-print(len(a))
-print(a[len(b):])
+print(__file__)
+print(os.path.dirname(__file__))
