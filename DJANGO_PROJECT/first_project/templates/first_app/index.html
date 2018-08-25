@@ -4,12 +4,32 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>INDEX PAGE</title>
-    <link rel="stylesheet" href="{% static "/css/mystyle.css"%}">
+    <link rel="stylesheet" href="{% static '/css/mystyle.css'%}">
+    <title>DJANGO Level Two</title>
   </head>
   <body>
-    <h1>HELLO SEXY ....</h1>
-    <img src="{% static "images/image.jpg" %}" alt="Oooppssss" height=400>
+    <h1>Welcome to the Web Access Records</h1>
+    <h2>Your access are:</h2>
+
+    <div class="djangoTwo">
+      {% if access_records %}
+        <table>
+          <thead>
+            <th>Website Name</th>
+            <th>Access Date</th>
+          </thead>
+          {% for acc in access_records %}
+            <tr>
+              <td>{{ acc.name }}</td>
+              <td>{{ acc.date }}</td>
+            </tr>
+          {% endfor%}
+        </table>
+
+      {% else %}
+        <p>NO RECORDS FOUND</p>
+      {% endif %}
+    </div>
 
   </body>
 </html>
