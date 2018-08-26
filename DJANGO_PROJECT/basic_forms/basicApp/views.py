@@ -1,0 +1,21 @@
+from django.shortcuts import render
+from . import forms
+
+# Create your views here.
+def index(request):
+    return render(request,'basicApp/index.html')
+
+def form_page_view(request):
+    form = forms.FormName()
+
+    if request.method == 'POST': #check if a post created
+        form = forms.FormName (request.POST)
+
+        if form.is_valid(): #standard form validation
+            #CODE HERE
+            print('Validated')
+            print('NAME: '+form.cleaned_data['name'])
+            print('EMAIL: '+form.cleaned_data['email'])
+            print('TEXT: '+form.cleaned_data['text'])
+
+    return render(request,'basicApp/form_page.html',{'form':form})

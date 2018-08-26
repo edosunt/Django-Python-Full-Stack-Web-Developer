@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from AppTwo.models import User
+from AppTwo.forms import SignUpForm
 
 # Create your views here.
 def index(request):
@@ -15,3 +16,15 @@ def users(request):
     userDict = {"user_record":allUser}
 
     return render(request,'AppTwo/users.html',context=userDict)
+
+def signup(request):
+    form = SignUpForm()
+
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+
+        if form.is_valid():
+            form.save(commit = True)
+            return users(request)
+
+    return render(request,'AppTwo/signup.html',{'form':form})

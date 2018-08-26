@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <title>FORMS</title>
+  </head>
+  <body>
+    <h2>Please input your data:</h2>
+    <div class="jumbotron">
+      <div class="container">
+        <form method="POST">
+          {{ form.as_p }} <!-- as_p is used to separate the forms field per paragraph -->
+          {% csrf_token %} <!-- this is required for security purpose when submit the data -->
+          <input type="submit" class="btn btn-primary" value="SUBMIT">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
